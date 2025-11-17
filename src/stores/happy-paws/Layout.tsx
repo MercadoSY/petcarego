@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, NavLink, useParams } from 'react-router-dom';
+import spriteHref from '../../assets/sprite.svg';
 
 /**
  * @description The unique layout for the Happy Paws store, featuring a top navigation bar.
@@ -42,11 +43,9 @@ const HappyPawsLayout: React.FC<{ children: React.ReactNode }> = ({ children }) 
               to={`/store/${storeSlug}/about`}
               className="flex flex-col items-center gap-2 sm:flex-row sm:gap-3"
             >
-              <img
-                src="https://www.svgrepo.com/show/321202/paw-heart.svg"
-                alt="Happy Paws Logo"
-                className="h-10 w-10"
-              />
+              <svg className="h-10 w-10" aria-label="Happy Paws Logo" role="img">
+                <use href={`${spriteHref}#paw-heart`} />
+              </svg>
               <h1
                 className="text-2xl font-bold tracking-tight text-white sm:text-3xl"
                 style={{ fontFamily: "'Comic Sans MS', cursive, sans-serif" }}

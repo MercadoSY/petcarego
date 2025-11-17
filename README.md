@@ -9,7 +9,7 @@
   <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase">
   <br />
   <br />
-  <a href="#"><strong>Website</strong></a>
+  <a href="https://petcarego.vercel.app/"><strong>Website</strong></a>
 </div>
 
 <br />
