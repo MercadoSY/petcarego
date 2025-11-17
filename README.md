@@ -39,7 +39,7 @@
     </tr>
     <tr>
       <td>Detailed Clinic Profiles</td>
-      <td>View comprehensive profiles of veterinary clinics, including about information, shop items listed, and a appointment form service</td>
+      <td>View comprehensive profiles of veterinary clinics, including about information, shop items listed, and an appointment form service</td>
     </tr>
   </tbody>
 </table>
