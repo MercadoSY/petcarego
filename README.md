@@ -1,4 +1,5 @@
 
+
 <div align="center">
   <img src="public/banner.webp" alt="PetCareGO Banner" width="100%">
 </div>
@@ -57,6 +58,7 @@
 ## © Credits & Attributions
 
 *   **Icons**: Icons are provided by [Flaticon](https://www.flaticon.com/), [SVG Repo](https://www.svgrepo.com/).
+*   **Images**: Images are provided by [Pxhere](https://pxhere.com).
 
 <br />
 
