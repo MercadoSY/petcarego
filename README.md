@@ -1,6 +1,6 @@
 
 <div align="center">
-  <img src="/banner.webp" alt="PetCareGO Banner" width="100%">
+  <img src="public/banner.webp" alt="PetCareGO Banner" width="100%">
 </div>
 <br />
 <div align="center">
