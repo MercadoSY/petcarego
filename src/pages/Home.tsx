@@ -2,6 +2,7 @@ import React, { useEffect, useState, useMemo, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { getStores } from '../services/api';
 import type { Store } from '../types';
+import spriteHref from '../assets/sprite.svg';
 
 // A curated list of high-quality pet images for the background
 const backgroundImages = [
@@ -123,7 +124,7 @@ const Home: React.FC = () => {
   const googleMapsUrl = selectedStore?.google_maps_url || '#';
 
   const selectStyles =
-    "mt-2 block w-full cursor-pointer appearance-none rounded-lg border-0 bg-white py-3 px-4 pr-12 text-slate-900 shadow-md ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-darkOrange-500 sm:text-base sm:leading-6 disabled:cursor-not-allowed disabled:bg-slate-200/70 disabled:text-slate-500 bg-[url('https://www.svgrepo.com/show/495000/arrow-down.svg')] bg-no-repeat bg-[position:right_0.75rem_center] bg-[length:1.25em_1.25em] transition-shadow duration-200 hover:ring-2 hover:ring-inset hover:ring-darkOrange-500";
+    "mt-2 block w-full cursor-pointer appearance-none rounded-lg border-0 bg-white py-3 px-4 pr-12 text-slate-900 shadow-md ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-darkOrange-500 sm:text-base sm:leading-6 disabled:cursor-not-allowed disabled:bg-slate-200/70 disabled:text-slate-500 transition-shadow duration-200 hover:ring-2 hover:ring-inset hover:ring-darkOrange-500";
 
   return (
     <div className="flex min-h-screen font-sans">
@@ -152,16 +153,16 @@ const Home: React.FC = () => {
           aria-label="Back to Home"
           title="Back to Home"
         >
-          <img src="https://www.svgrepo.com/show/495011/arrow-left-2.svg" alt="Back Arrow" className="h-12 w-12" />
+          <svg className="h-12 w-12" aria-hidden="true">
+            <use href={`${spriteHref}#arrow-left-2`} />
+          </svg>
         </Link>
 
         <div className="relative z-10 w-full max-w-md text-center">
           {/* Logo */}
-          <img
-            src="https://www.svgrepo.com/show/475553/pet-shop.svg"
-            alt="PetCareGo Logo"
-            className="mx-auto mb-6 h-28 w-28"
-          />
+          <svg className="mx-auto mb-6 h-28 w-28" aria-label="PetCareGo Logo" role="img">
+            <use href={`${spriteHref}#pet-shop`} />
+          </svg>
 
           <h1 className="mb-2 text-5xl font-extrabold text-slate-800">Find a Clinic</h1>
           <p className="mb-8 text-lg text-slate-600">Select a location to see available veterinary clinics.</p>
@@ -176,14 +177,21 @@ const Home: React.FC = () => {
                 <label htmlFor="location" className="block text-lg font-semibold leading-6 text-slate-700">
                   Location
                 </label>
-                <select id="location" name="location" value={selectedLocation} onChange={handleLocationChange} className={selectStyles}>
-                  <option value="">-- Select a Location --</option>
-                  {locations.map(loc => (
-                    <option key={loc} value={loc}>
-                      {loc}
-                    </option>
-                  ))}
-                </select>
+                <div className="relative">
+                  <select id="location" name="location" value={selectedLocation} onChange={handleLocationChange} className={selectStyles}>
+                    <option value="">-- Select a Location --</option>
+                    {locations.map(loc => (
+                      <option key={loc} value={loc}>
+                        {loc}
+                      </option>
+                    ))}
+                  </select>
+                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-[0.75rem]">
+                    <svg className="h-[1.25em] w-[1.25em] text-slate-900" aria-hidden="true">
+                      <use href={`${spriteHref}#arrow-down`} />
+                    </svg>
+                  </div>
+                </div>
               </div>
 
               {/* Store Dropdown */}
@@ -191,21 +199,28 @@ const Home: React.FC = () => {
                 <label htmlFor="store" className="block text-lg font-semibold leading-6 text-slate-700">
                   Clinic
                 </label>
-                <select
-                  id="store"
-                  name="store"
-                  value={selectedStore?.id.toString() || ''}
-                  onChange={handleStoreChange}
-                  disabled={!selectedLocation || !filteredStores.length}
-                  className={selectStyles}
-                >
-                  <option value="">-- Select a Clinic --</option>
-                  {filteredStores.map(store => (
-                    <option key={store.id} value={store.id.toString()}>
-                      {store.name}
-                    </option>
-                  ))}
-                </select>
+                <div className="relative">
+                  <select
+                    id="store"
+                    name="store"
+                    value={selectedStore?.id.toString() || ''}
+                    onChange={handleStoreChange}
+                    disabled={!selectedLocation || !filteredStores.length}
+                    className={selectStyles}
+                  >
+                    <option value="">-- Select a Clinic --</option>
+                    {filteredStores.map(store => (
+                      <option key={store.id} value={store.id.toString()}>
+                        {store.name}
+                      </option>
+                    ))}
+                  </select>
+                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-[0.75rem]">
+                    <svg className="h-[1.25em] w-[1.25em] text-slate-900" aria-hidden="true">
+                      <use href={`${spriteHref}#arrow-down`} />
+                    </svg>
+                  </div>
+                </div>
               </div>
 
               {/* Selected Store Details (conditional) */}
@@ -218,7 +233,9 @@ const Home: React.FC = () => {
                       to={`/store/${selectedStore.slug}`}
                       className="flex flex-1 items-center justify-center gap-2 transform rounded-full bg-darkOrange-600 px-4 py-3 text-center font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-darkOrange-500 focus:outline-none focus:ring-4 focus:ring-darkOrange-300"
                     >
-                      <img src="https://www.svgrepo.com/show/527784/logout-3.svg" alt="" className="h-5 w-5" style={{ filter: 'brightness(0) invert(1)' }} />
+                      <svg className="h-5 w-5" style={{ filter: 'brightness(0) invert(1)' }} aria-hidden="true">
+                        <use href={`${spriteHref}#logout-3`} />
+                      </svg>
                       <span>Visit Page</span>
                     </Link>
                     <a
@@ -227,7 +244,9 @@ const Home: React.FC = () => {
                       rel="noopener noreferrer"
                       className="flex flex-1 items-center justify-center gap-2 transform rounded-full bg-brandBlue-600 px-4 py-3 text-center font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-brandBlue-500 focus:outline-none focus:ring-4 focus:ring-brandBlue-300"
                     >
-                      <img src="https://www.svgrepo.com/show/528394/map-point-wave.svg" alt="" className="h-5 w-5" style={{ filter: 'brightness(0) invert(1)' }} />
+                      <svg className="h-5 w-5" style={{ filter: 'brightness(0) invert(1)' }} aria-hidden="true">
+                        <use href={`${spriteHref}#map-point-wave`} />
+                      </svg>
                       <span>View on Map</span>
                     </a>
                   </div>

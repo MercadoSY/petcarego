@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useParams, useLocation } from 'react-router-dom';
 import { useStoreData } from '../../contexts/StoreContext';
+import spriteHref from '../../assets/sprite.svg';
 
 /**
  * @description The responsive, unique layout for the Seaside Pets store, featuring a collapsible sidebar.
@@ -24,11 +25,9 @@ const SeasidePetsLayout: React.FC<{ children: React.ReactNode }> = ({ children }
   const SidebarContent = () => (
     <>
       <div className="flex flex-col items-center border-b border-sky-700 p-6">
-        <img
-          src="https://www.svgrepo.com/show/500123/turtle.svg"
-          alt="Seaside Pets Logo"
-          className="mb-4 h-20 w-20"
-        />
+        <svg className="mb-4 h-20 w-20" aria-label="Seaside Pets Logo" role="img">
+          <use href={`${spriteHref}#turtle`} />
+        </svg>
         <h1 className="text-center text-xl font-bold tracking-wider">{storeData.name}</h1>
       </div>
       <nav className="flex-grow p-4">

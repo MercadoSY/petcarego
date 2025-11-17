@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import spriteHref from '../assets/sprite.svg';
 
 // --- Style & Content Configuration ---
 // Edit these values to easily change the page's appearance.
@@ -108,7 +109,9 @@ const Landing: React.FC = () => {
         {/* SVG Background Pattern */}
         <div className="absolute top-0 left-0 h-full w-full transform bg-hero-pattern bg-repeat opacity-10 scale-150 -rotate-12 will-change-transform"></div>
         <div className="relative z-10 p-8">
-          <img src="https://www.svgrepo.com/show/475553/pet-shop.svg" alt="PetCareGo Logo" className="mx-auto mb-6 h-36 w-36" />
+          <svg className="mx-auto mb-6 h-36 w-36" aria-label="PetCareGo Logo" role="img">
+            <use href={`${spriteHref}#pet-shop`} />
+          </svg>
           <h1 className="font-display text-6xl font-extrabold text-brandOrange drop-shadow-title sm:text-8xl lg:text-9xl">PetCareGo</h1>
           <p className="mt-4 text-base text-slate-600 sm:text-xl md:text-2xl">Your one-stop solution for finding the best local veterinary care.</p>
           <Link
@@ -117,7 +120,9 @@ const Landing: React.FC = () => {
             className={`mt-8 inline-flex items-center gap-3 transform rounded-full px-8 py-3 text-lg font-semibold shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl focus:outline-none focus:ring-4 sm:px-10 sm:py-4 sm:text-xl ${styleConfig.colors.button}`}
           >
             <span>Find a Vet Near You</span>
-            <img src="https://www.svgrepo.com/show/368007/arrow-right-thick.svg" alt="Arrow Right" className="h-8 w-8" style={{ filter: 'brightness(0) invert(1)' }} />
+            <svg className="h-8 w-8" style={{ filter: 'brightness(0) invert(1)' }} aria-hidden="true">
+              <use href={`${spriteHref}#arrow-right-thick`} />
+            </svg>
           </Link>
         </div>
         {/* Scroll Down Arrow */}
@@ -127,7 +132,9 @@ const Landing: React.FC = () => {
           className={`absolute bottom-10 z-10 transition-opacity duration-300 ${showArrow ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         >
           <div className="animate-bounce rounded-full bg-white/30 p-2">
-            <img src="https://www.svgrepo.com/show/495002/arrow-bottom.svg" alt="Scroll Down Arrow" className="h-10 w-10 text-slate-700" />
+            <svg className="h-10 w-10 text-slate-700" aria-hidden="true">
+              <use href={`${spriteHref}#arrow-bottom`} />
+            </svg>
           </div>
         </a>
       </header>
@@ -136,7 +143,9 @@ const Landing: React.FC = () => {
       <section id="features" className="bg-gradient-to-b from-amber-50 to-stone-50 py-20 sm:py-24 px-4 sm:px-6 text-center">
         <div className="container mx-auto">
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <img src="https://www.svgrepo.com/show/400788/star.svg" alt="Star Icon" className="h-12 w-12" />
+            <svg className="h-12 w-12" aria-hidden="true">
+              <use href={`${spriteHref}#star`} />
+            </svg>
             <h2 className={styleConfig.text.sectionTitle}>Why Choose Us?</h2>
           </div>
           <p className={`mt-4 mb-12 ${styleConfig.text.sectionSubtitle}`}>We make pet care simple, accessible, and stress-free for both you and your furry friends.</p>
@@ -144,7 +153,9 @@ const Landing: React.FC = () => {
             {/* Card 1 */}
             <div className="flex flex-col items-center rounded-3xl border border-transparent bg-orange-50 p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-darkOrange-300 hover:shadow-glow-orange">
               <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-orange-500">
-                <img src="https://www.svgrepo.com/show/495668/search-normal.svg" alt="Easy Search Icon" className="h-10 w-10" style={{ filter: 'brightness(0) invert(1)' }} />
+                <svg className="h-10 w-10" style={{ filter: 'brightness(0) invert(1)' }} aria-hidden="true">
+                  <use href={`${spriteHref}#search-normal`} />
+                </svg>
               </div>
               <h3 className="mb-2 text-2xl font-semibold">Easy Search</h3>
               <p className="text-base text-slate-600">Quickly find top-rated veterinary clinics in your area with our simple search interface.</p>
@@ -152,7 +163,9 @@ const Landing: React.FC = () => {
             {/* Card 2 */}
             <div className="flex flex-col items-center rounded-3xl border border-transparent bg-brandBlue-100 p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-brandBlue-300 hover:shadow-glow-blue">
               <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-brandBlue-500">
-                <img src="https://www.svgrepo.com/show/495066/bookmark.svg" alt="Online Booking Icon" className="h-10 w-10" style={{ filter: 'brightness(0) invert(1)' }} />
+                <svg className="h-10 w-10" style={{ filter: 'brightness(0) invert(1)' }} aria-hidden="true">
+                  <use href={`${spriteHref}#bookmark`} />
+                </svg>
               </div>
               <h3 className="mb-2 text-2xl font-semibold">Online Booking</h3>
               <p className="text-base text-slate-600">Book appointments 24/7 directly through our platform. No more waiting on the phone.</p>
@@ -160,7 +173,9 @@ const Landing: React.FC = () => {
             {/* Card 3 */}
             <div className="flex flex-col items-center rounded-3xl border border-transparent bg-purple-100 p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-purple-300 hover:shadow-glow-purple">
               <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-purple-500">
-                <img src="https://www.svgrepo.com/show/495177/code.svg" alt="Custom Vet Pages Icon" className="h-10 w-10" style={{ filter: 'brightness(0) invert(1)' }} />
+                <svg className="h-10 w-10" style={{ filter: 'brightness(0) invert(1)' }} aria-hidden="true">
+                  <use href={`${spriteHref}#code`} />
+                </svg>
               </div>
               <h3 className="mb-2 text-2xl font-semibold">Custom Vet Pages</h3>
               <p className="text-base text-slate-600">Each partner clinic gets a beautiful, easy-to-navigate website designed by us.</p>
@@ -175,7 +190,9 @@ const Landing: React.FC = () => {
           <img src="https://c.pxhere.com/photos/39/6f/cat_red_cute_mackerel_tiger_sweet_cuddly_animal-676175.jpg!d" alt="A cute red cat" className="mx-auto w-full max-w-lg rounded-3xl shadow-xl" />
           <div>
             <div className="mb-6 flex flex-col items-center gap-4 md:flex-row md:items-center md:justify-start">
-              <img src="https://www.svgrepo.com/show/400593/pawprints.svg" alt="Paw Print Icon" className="h-10 w-10" />
+              <svg className="h-10 w-10" aria-hidden="true">
+                <use href={`${spriteHref}#pawprints`} />
+              </svg>
               <h2 className={styleConfig.text.sectionTitle}>About PetCareGo</h2>
             </div>
             <p className={`mb-4 ${styleConfig.text.body}`}>PetCareGo was created to bridge the gap between pet owners and veterinary clinics. We partner with local vets to bring their services online, providing them with beautiful, custom-designed websites.</p>
@@ -188,7 +205,9 @@ const Landing: React.FC = () => {
       <section id="gallery" className="bg-gradient-to-b from-amber-100 to-stone-50 py-20 sm:py-24">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="mb-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <img src="https://www.svgrepo.com/show/400036/camerawithflash.svg" alt="Gallery Icon" className="h-12 w-12" />
+            <svg className="h-12 w-12" aria-hidden="true">
+              <use href={`${spriteHref}#camerawithflash`} />
+            </svg>
             <h2 className={styleConfig.text.sectionTitle}>Happy Clients</h2>
           </div>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
@@ -203,7 +222,9 @@ const Landing: React.FC = () => {
       <section id="demo" className="bg-gradient-to-b from-stone-50 to-themeBlue-400 py-20 sm:py-24 px-4 sm:px-6 text-center">
         <div className="container mx-auto">
           <div className="mb-6 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <img src="https://www.svgrepo.com/show/399988/blackquestionmark.svg" alt="Video Play Icon" className="h-12 w-12" />
+            <svg className="h-12 w-12" aria-hidden="true">
+              <use href={`${spriteHref}#blackquestionmark`} />
+            </svg>
             <h2 className={styleConfig.text.sectionTitle}>See How It Works</h2>
           </div>
           <div className="relative mx-auto aspect-video max-w-4xl overflow-hidden rounded-lg bg-slate-300 shadow-xl">
@@ -223,7 +244,9 @@ const Landing: React.FC = () => {
       <section id="partner" className="bg-gradient-to-b from-themeBlue-400 to-stone-50 py-20 sm:py-24 px-4 sm:px-6 text-center">
         <div className="container mx-auto">
           <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <img src="https://www.svgrepo.com/show/400353/hospital.svg" alt="Building Icon" className="h-12 w-12" />
+            <svg className="h-12 w-12" aria-hidden="true">
+              <use href={`${spriteHref}#hospital`} />
+            </svg>
             <h2 className={styleConfig.text.sectionTitle}>Grow Your Clinic with Us</h2>
           </div>
           <p className={`mt-4 mb-8 ${styleConfig.text.sectionSubtitle}`}>Join our network of trusted veterinary clinics. We'll provide you with a beautiful, custom-designed webpage and connect you with thousands of pet owners in your area.</p>
@@ -329,17 +352,23 @@ const Landing: React.FC = () => {
       <footer id="contact" className="bg-slate-800 pt-16 pb-8 text-white">
         <div className="container mx-auto flex flex-col items-center px-6 text-center">
           <div className="flex items-center">
-            <img src="https://www.svgrepo.com/show/475553/pet-shop.svg" alt="PetCareGo Logo" className="mr-3 h-10 w-10" />
+            <svg className="mr-3 h-10 w-10" aria-label="PetCareGo Logo" role="img">
+              <use href={`${spriteHref}#pet-shop`} />
+            </svg>
             <span className="text-2xl font-bold">PetCareGo</span>
           </div>
           <p className="mt-4 max-w-md text-slate-400 italic">"Until one has loved an animal, a part of one's soul remains unawakened."</p>
           <div className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-4">
             <a href="mailto:contact@petcarego.com" className="flex items-center gap-2 text-slate-300 hover:text-white">
-              <img src="https://www.svgrepo.com/show/495115/call-incoming.svg" alt="Email Icon" className="h-5 w-5" style={{ filter: 'brightness(0) invert(1)' }} />
+              <svg className="h-5 w-5" style={{ filter: 'brightness(0) invert(1)' }} aria-hidden="true">
+                <use href={`${spriteHref}#call-incoming`} />
+              </svg>
               <span>contact@petcarego.com</span>
             </a>
             <a href="https://github.com/your-repo" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-slate-300 hover:text-white">
-              <img src="https://www.svgrepo.com/show/507321/github.svg" alt="GitHub Icon" className="h-5 w-5" style={{ filter: 'brightness(0) invert(1)' }} />
+              <svg className="h-5 w-5" style={{ filter: 'brightness(0) invert(1)' }} aria-hidden="true">
+                <use href={`${spriteHref}#github`} />
+              </svg>
               <span>GitHub</span>
             </a>
           </div>
@@ -356,7 +385,9 @@ const Landing: React.FC = () => {
                 ${styleConfig.colors.button}
                 ${showFab ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}
       >
-        <img src="https://www.svgrepo.com/show/495668/search-normal.svg" alt="Search Icon" className="h-7 w-7" style={{ filter: 'brightness(0) invert(1)' }} />
+        <svg className="h-7 w-7" style={{ filter: 'brightness(0) invert(1)' }} aria-hidden="true">
+          <use href={`${spriteHref}#search-normal`} />
+        </svg>
         <span className="hidden sm:inline">Find a Vet</span>
       </Link>
     </div>
