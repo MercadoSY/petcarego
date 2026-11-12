@@ -6,14 +6,16 @@ import spriteHref from '../assets/sprite.svg';
 
 // A curated list of high-quality pet images for the background
 const backgroundImages = [
-  'https://c.pxhere.com/photos/a3/cd/dog_weimaraner_portrait_remote_access-420058.jpg!d',
-  'https://c.pxhere.com/photos/02/cf/dog_dalmatians_pet_dog_breed_animal_portrait_stains_dog_head_hundeportrait-1060806.jpg!d',
-  'https://c.pxhere.com/photos/e0/cd/cat_red_cute_mackerel_tiger_sweet_cuddly_animal-497073.jpg!d',
-  'https://c.pxhere.com/photos/a5/bf/cat_animal_pet_tabby_eye-18061.jpg!d',
-  'https://c.pxhere.com/photos/8b/c2/sleeping_chameleon_yemen_chameleon_reptile_animal_green_head_eye_insect_eater-1009768.jpg!d',
-  'https://c.pxhere.com/photos/5a/c8/hand_stroking_parrot_pet_bird_white_budgie-551592.jpg!d',
-  'https://c.pxhere.com/photos/11/4d/photo-191618.jpg!d',
-  'https://c.pxhere.com/photos/d5/a9/dog_labrador_light_brown_pet_hundeportrait_dog_head_in_the_free_profile-655507.jpg!d',
+  'https://res.cloudinary.com/a11zdpge/image/upload/v1794519398/alvan-nee-eoqnr8ikwFE-unsplash.webp',
+  'https://res.cloudinary.com/a11zdpge/image/upload/v1794519459/david-clode-FFlH6th4WNA-unsplash.webp',
+  'https://res.cloudinary.com/a11zdpge/image/upload/v1794519632/dog_weimaraner_portrait_remote_access-420058.webp',
+  'https://res.cloudinary.com/a11zdpge/image/upload/v1794519633/alvan-nee-ZCHj_2lJP00-unsplash.webp',
+  'https://res.cloudinary.com/a11zdpge/image/upload/v1794519633/balmer-rosario-k6awQMzsmsI-unsplash.webp',
+  'https://res.cloudinary.com/a11zdpge/image/upload/v1794519634/cedric-vt-IuJc2qh2TcA-unsplash.webp',
+  'https://res.cloudinary.com/a11zdpge/image/upload/v1794520155/boris-smokrovic-bPldxRHkTzw-unsplash.webp',
+  'https://res.cloudinary.com/a11zdpge/image/upload/v1794520155/keith-markilie-0EebGYVIBmA-unsplash.webp',
+  'https://res.cloudinary.com/a11zdpge/image/upload/v1794520155/suri-huang-cHP9WBFKm9o-unsplash.webp',
+  'https://res.cloudinary.com/a11zdpge/image/upload/v1794520156/nina-zaychenko-oIFk77lOiNA-unsplash.webp',
 ];
 
 /**

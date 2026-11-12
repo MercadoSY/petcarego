@@ -22,18 +22,18 @@ const styleConfig = {
 
 // --- Gallery Images Data ---
 const galleryImages = [
-    { src: 'https://c.pxhere.com/photos/8a/09/dog_pet_cute_doggy_little_happy_cheerful_question-743323.jpg!d', alt: 'Happy questioning dog' },
-    { src: 'https://c.pxhere.com/photos/9e/73/cat_sweet_kitty_animals-974997.jpg!d', alt: 'Sweet kitty' },
-    { src: 'https://c.pxhere.com/photos/a6/88/bearded_dragon_reptile_talking_intelligent_persuading_wildlife_pet_scaly-753199.jpg!d', alt: 'Bearded dragon' },
-    { src: 'https://c.pxhere.com/images/77/8e/315bbdcb829ea7e38f55f389985f-1604050.jpg!d', alt: 'Playful dog' },
-    { src: 'https://c.pxhere.com/photos/2d/f2/golden_retriever_puppy_happy_jumping_play_playful_dog_golden-1279753.jpg!d', alt: 'Jumping golden retriever puppy' },
-    { src: 'https://c.pxhere.com/photos/1e/1f/autumn_dog_pet_smile_leaves_animal_happy_golden-265589.jpg!d', alt: 'Smiling dog in autumn leaves' },
-    { src: 'https://c.pxhere.com/photos/3a/1e/cat_animal_pet_yawn_whisker-37816.jpg!d', alt: 'Yawning cat' },
-    { src: 'https://c.pxhere.com/photos/76/ca/hamster_animal_pet_cute_hamsters_hallo_kitty-1131255.jpg!d', alt: 'Cute hamster' },
-    { src: 'https://c.pxhere.com/photos/57/f3/pit_bull_terrier_mix_head_dog_bull_pet_animal_pit-1110916.jpg!d', alt: 'Pit bull terrier' },
-    { src: 'https://c.pxhere.com/photos/14/d7/guinea_pig_animal_small_fuzz_adorable_furry_friend-486681.jpg!d', alt: 'Adorable guinea pig' },
-    { src: 'https://c.pxhere.com/photos/90/6b/birds_lori_animal_lori_red_beak_colors_rainbow_lorikeet_animals-1324529.jpg!d', alt: 'Colorful rainbow lorikeet' },
-    { src: 'https://c.pxhere.com/photos/ba/8b/snake_orange_animal_creature_snakeskin_species_pet-751679.jpg!d', alt: 'Orange corn snake' },
+    { src: 'https://res.cloudinary.com/a11zdpge/image/upload/v1794516633/puppy_dog_pet_animal_cute_white_adorable_canine-1264875.webp'},
+    { src: 'https://res.cloudinary.com/a11zdpge/image/upload/v1794516634/cat_sweet_kitty_animals-974997.webp'},
+    { src: 'https://res.cloudinary.com/a11zdpge/image/upload/v1794516634/pablo-franco-EAKvRkWtA9Y-unsplash_1.webp'},
+    { src: 'https://res.cloudinary.com/a11zdpge/image/upload/v1794516634/marieke-koenders--Elf7vDV7Rk-unsplash.webp'},
+    { src: 'https://res.cloudinary.com/a11zdpge/image/upload/v1794516634/golden_retriever_puppy_happy_jumping_play_playful_dog_golden-1279753.webp'},
+    { src: 'https://res.cloudinary.com/a11zdpge/image/upload/v1794516635/giollianosulit-sulit-1TPdQq54fH0-unsplash.webp'},
+    { src: 'https://res.cloudinary.com/a11zdpge/image/upload/v1794516634/reza-shahmoradi-wGRWZl41MGI-unsplash.webp'},
+    { src: 'https://res.cloudinary.com/a11zdpge/image/upload/v1794516634/kayl-photo-ZYlzUsC8f5s-unsplash.webp'},
+    { src: 'https://res.cloudinary.com/a11zdpge/image/upload/v1794516635/mike-burke-gxyfJQg7Lno-unsplash.webp'},
+    { src: 'https://res.cloudinary.com/a11zdpge/image/upload/v1794516634/yosei-g-TBBuJQkbiMk-unsplash.webp'},
+    { src: 'https://res.cloudinary.com/a11zdpge/image/upload/v1794516635/david-vives-r1dkaDXdCDo-unsplash.webp'},
+    { src: 'https://res.cloudinary.com/a11zdpge/image/upload/v1794516635/andy-luo-xK8Wxg7sErs-unsplash.webp'},
 ];
 
 /**
@@ -187,7 +187,7 @@ const Landing: React.FC = () => {
             {/* About Section */}
             <section id="about" className="bg-gradient-to-b from-stone-50 to-amber-100 py-20 sm:py-24 px-4 sm:px-6">
                 <div className="container mx-auto grid items-center gap-12 text-center md:grid-cols-2 md:text-left">
-                    <img src="https://c.pxhere.com/photos/39/6f/cat_red_cute_mackerel_tiger_sweet_cuddly_animal-676175.jpg!d" alt="A cute red cat" className="mx-auto w-full max-w-lg rounded-3xl shadow-xl" />
+                    <img src="https://res.cloudinary.com/a11zdpge/image/upload/v1794517447/kabo-p6yH8VmGqxo-unsplash.webp" className="mx-auto w-full max-w-lg rounded-3xl shadow-xl" />
                     <div>
                         <div className="mb-6 flex flex-col items-center gap-4 md:flex-row md:items-center md:justify-start">
                             <svg className="h-10 w-10" aria-hidden="true">
@@ -212,7 +212,16 @@ const Landing: React.FC = () => {
                     </div>
                     <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
                         {galleryImages.map((image, index) => (
-                            <img key={index} src={image.src} alt={image.alt} className="h-full w-full rounded-lg object-cover shadow-md transition-transform duration-300 hover:scale-105" />
+                            <div
+                                key={index}
+                                className="aspect-square w-full overflow-hidden rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
+                            >
+                                <img
+                                    src={image.src}
+                                    alt={`Happy client ${index + 1}`}
+                                    className="h-full w-full object-cover"
+                                />
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -366,7 +375,7 @@ const Landing: React.FC = () => {
                             </svg>
                             <span>contact@petcarego.com</span>
                         </a>
-                        <a href="https://github.com/your-repo" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-slate-300 hover:text-white">
+                        <a href="https://github.com/MercadoSY/petcarego" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-slate-300 hover:text-white">
                             <svg className="h-5 w-5" style={{ filter: 'brightness(0) invert(1)' }} aria-hidden="true">
                                 <use href={`${spriteHref}#github`} />
                             </svg>

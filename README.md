@@ -58,7 +58,7 @@
 ## © Credits & Attributions
 
 *   **Icons**: Icons are provided by [Flaticon](https://www.flaticon.com/), [SVG Repo](https://www.svgrepo.com/).
-*   **Images**: Images are provided by [Pxhere](https://pxhere.com).
+*   **Images**: Images are provided by multiple photographers at [Unsplash](https://unsplash.com). All images are free to use.
 
 <br />
 
